@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="mainbody h-screeen w-full">
+        <div class="innerbody">
+            <div id="cursor"></div>
+            <div class="nav">
+                <div class="brand">
+                    <img src="data:image/jpeg;base64,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"
+                        alt="">
+                    <!-- <i class="ri-bluesky-fill"></i>
+                    <h1>zara</h1> -->
+                </div>
+                <div class="buttons">
+                    <h1 class="a">New Arrivals</h1>
+                    <h1 class="b">shop</h1>
+                    <h1 class="c">beauty</h1>
+                    <h1 class="d">sale</h1>
+                    <h1 class="e">journal</h1>
+                </div>
+                <div class="icons">
+                    <button><i class="ri-search-line"></i></button>
+                    <button><i class="ri-account-circle-line"></i></button>
+                    <button class="abc"><i class="ri-shopping-cart-2-line"></i></button>
+                </div>
+            </div>
+            <div class="line"></div>
+            <div class="content">
+                <h1 class="text">make your fashion look </h1>
+                <h1 class="text">more charming</h1>
+            </div>
+            <button class="flower"></button>
+            <button class="flower2"></button>
+            <button class="flower3"></button>
+            <div class="box">
+                <h1>summer collection</h1>
+                <p>trendy and <br>clussi for<br>new seasson</p>
+            </div>
+            <div class="box2">
+                <i class="ri-play-fill"></i>
+            </div>
+            <div class="pictures">
+                <div class="sec5"></div>
+                <div class="sec4">
+                    <div class="part1"></div>
+                    <div class="part2"></div>
+                </div>
+                <div class="sec1"></div>
+                <div class="sec42">
+                    <div class="part12"></div>
+                    <div class="part22"></div>
+                </div>
+                <!-- <div class="sec2">
+                    <div class="part1"></div>
+                    <div class="part2"></div>
+                </div> -->
+                <div class="sec3"></div>
+            </div>
+        </div>
+    </div>
+    <div class="main2">
+        <div class="page2">
+            <div class="division">
+                <div class="more">
+                    <div class="midpart"></div>
+                    <div class="midcircle"></div>
+                    <div class="section1">
+                        <div class="part1">
+                            <div class="linefull"></div>
+                        </div>
+                        <div class="part2"></div>
+                        <div class="part3"></div>
+                    </div>
+                    <div class="section2">
+                        <div class="part1">
+
+                        </div>
+                        <div class="part2"></div>
+                        <div class="part3"></div>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="page3 w-full h-screen ">
+                <div id="card1">
+                    <img src="./pics2.png" alt="">
+                    <h1 class="text-white font-semibold">CROP TOP</h1>
+                    <div class="text">
+                        <h3 class="tracking-widest">TIMELESS</h3>
+                        <h2>CROP TOP</h2>
+                        <h5>WITH SLEEVE BLOW</h5>
+                        <h2>BLUSH</h2>
+                        <p>Wheather it's a casual outing or a night out with friend, a crop top add an edgy and
+                            fashionable touch to any outfit</p>
+                        <button>Shop now<i class="ri-arrow-right-fill text-sm"></i></button>
+                    </div>
+                    <img class="pic2" src="./pics3-removebg-preview.png" alt="">
+                </div>
+                <div id="card2">
+                    <img src="./pics7-removebg-preview.png" alt="">
+                    <h1 class="text-white font-semibold">JACKET</h1>
+                    <div class="text">
+                        <h3 class="tracking-widest">NEW IN</h3>
+                        <h2>JACKET</h2>
+                        <h5>PERFECT FIT</h5>
+                        <h2>HONEY</h2>
+                        <p>The lightweight jacket features a trendy chain-link design, while the trousers have chic
+                            chain details</p>
+                        <button>Shop now<i class="ri-arrow-right-fill text-sm"></i></button>
+                    </div>
+                    <img class="pic"
+                        src="./sunrise-yellow-double-breasted-2-piece-suit-p13992-119949_image-removebg-preview.png"
+                        alt="">
+                </div>
+            </div>
+        </div>
+        <div class="page4 w-full h-screen">
+            <div id="card3">
+                <img src="./Screenshot__41_-removebg-preview.png" alt="">
+                <h1 class="text-white font-semibold">SWEATER</h1>
+                <div class="text">
+                    <h3 class="tracking-widest">KNITWEAR</h3>
+                    <h2>SWEATER</h2>
+                    <h5>V NECK</h5>
+                    <h2>SKY BLUE</h2>
+                    <p>A dress made of knitted or crocheted material, esp a heavy one worn for warmth</p>
+                    <button>Shop now<i class="ri-arrow-right-fill text-sm"></i></button>
+                </div>
+                <img class="pic2" src="./Screenshot__42_-removebg-preview.png" alt="">
+            </div>
+            <div id="card4">
+                <img src="./pics11-removebg-preview.png" alt="">
+                <h1 class="text-white font-semibold">PARTY DRESS</h1>
+                <div class="text">
+                    <h3 class="tracking-widest">AWESOME</h3>
+                    <h2>DRESS</h2>
+                    <h5>DEEP V NECK</h5>
+                    <h2>WHITE</h2>
+                    <p>Women's spring summer party casual solid elegent beautiful summer dress</p>
+                    <button>Shop now<i class="ri-arrow-right-fill text-sm"></i></button>
+                </div>
+                <img class="pic" src="./Screenshot__43_-removebg-preview.png" alt="">
+            </div>
+        </div>
+        <div class="page5 w-full h-screen">
+
+            <div class="kuchbhi w-full h-[70%] flex items-center mt-[10%]">
+                <div id="left">
+                    <div class="image">
+                        <img id="pic " src="https://qph.cf2.quoracdn.net/main-qimg-7fbb8b510f4fc6890bb49a26189ca5c9-lq"
+                            alt="">
+
+                    </div>
+                </div>
+                <div id="right1">
+                    <h1 id="one">Trendy Collection's</h1>
+                    <h1 id="two">HIGHEST QUALITY</h1>
+                    <h1 id="three">COLLECTION</h1>
+                    <p id="four">Give yourself the Stylish look and deserve at <br> affordable prices.</p>
+                    <div class="logos">
+                        <div id="left">
+                            <button id="first"><i class="ri-facebook-fill"></i></button>
+                            <button id="second"><i class="ri-instagram-line"></i></button>
+                            <button id="third"><i class="ri-twitter-fill border-md"></i></button>
+                        </div>
+                        <div id="right">
+                            <button id="fourth">50K</button>
+                            <button id="fifth">8K</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="last">
+            <div class="nav">
+                <h1>what our<br>reviews says.</h1>
+            </div>
+            <div class="review">
+                <div class="c1">
+                    <h1><i class="ri-star-s-fill"></i><i class="ri-star-s-fill"></i><i class="ri-star-s-fill"></i><i
+                            class="ri-star-s-fill"></i><i class="ri-star-half-s-line"></i></h1>
+                    <p>Fashion World has some excellent Womens Clothing Collections (better than other factory outlets
+                        in the same area..take the hint ;-) )</p>
+                    <!-- <button></button><h2>herry meichel</h2> -->
+                </div>
+
+                <div class="c2">
+                    <h1><i class="ri-star-s-fill"></i><i class="ri-star-s-fill"></i><i class="ri-star-s-fill"></i><i
+                            class="ri-star-s-fill"></i></h1>
+                    <p>Fashion better start from saying that I'm very picky clothes buyer and like very good quality
+                        stuff.</p>
+                    <!-- <button></button><h2>Kashifa khan</h2> -->
+                </div>
+                <div class="c3">
+                    <h1><i class="ri-star-s-fill"></i><i class="ri-star-s-fill"></i><i class="ri-star-s-fill"></i><i
+                            class="ri-star-half-s-line"></i></h1>
+                    <p>There's also new culinary area .
+                        I love the new display for fashion items there, so simple and beautiful.</p>
+                    <!-- <button></button><h2>Alfaiz Khan</h2> -->
+                </div>
+                <div class="c4">
+                    <h1><i class="ri-star-s-fill"></i><i class="ri-star-s-fill"></i><i class="ri-star-s-fill"></i><i
+                            class="ri-star-s-fill"></i><i class="ri-star-half-s-line"></i></h1>
+                    <p>Whatever you need for young and old, under one roof. Great variety of choices. Items reasonably
+                        priced. Very helpful staff.</p>
+                    <!-- <button></button><h2>Merry Joshephy</h2> -->
+                </div>
+            </div>
+        </div>
+        <div class="instagram ">
+            <div id="div">
+                <h1 id="h1s">Instagram</h1>
+                <h3 id="h3s">Post</h3>
+            </div>
+            <div class="posts">
+                <div id="post1">
+                    <div class="profile">
+                        <div class="image">
+                        </div>
+                        <div class="texts">
+                            <h2>zara</h2>
+                        </div>
+                        <div class="tick"><i class="ri-check-fill text-white text-xs"></i></div>
+                    </div>
+                    <div class="post">
+                        <img src="https://images.unsplash.com/photo-1562572159-4efc207f5aff?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fG1vZGVsfGVufDB8fDB8fHww"
+                            alt="">
+                    </div>
+                    <div class="lcs">
+                        <div class="l">
+                            <i class="ri-heart-fill text-red-600"></i>
+                            <i class="ri-chat-3-line"></i>
+                            <i class="ri-send-plane-fill"></i>
+                        </div>
+                        <div class="r">
+                            <i class="ri-bookmark-line"></i>
+                        </div>
+                    </div>
+                </div>
+                <div id="post2">
+                    <div class="profile">
+                        <div class="image">
+                        </div>
+                        <div class="texts">
+                            <h2>zara</h2>
+                        </div>
+                        <div class="tick"><i class="ri-check-fill text-white text-xs"></i></div>
+                    </div>
+                    <div class="post">
+                        <img src="https://images.unsplash.com/photo-1545194828-a1cf868f1b2b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fHw%3D"
+                            alt="">
+                    </div>
+                    <div class="lcs">
+                        <div class="l">
+                            <i class="ri-heart-fill text-red-600"></i>
+                            <i class="ri-chat-3-line"></i>
+                            <i class="ri-send-plane-fill"></i>
+                        </div>
+                        <div class="r">
+                            <i class="ri-bookmark-line"></i>
+                        </div>
+                    </div>
+                </div>
+                <div id="post3">
+                    <div class="profile">
+                        <div class="image">
+                        </div>
+                        <div class="texts">
+                            <h2>zara</h2>
+                        </div>
+                        <div class="tick"><i class="ri-check-fill text-white text-xs"></i></div>
+                    </div>
+                    <div class="post">
+                        <img src="https://images.unsplash.com/photo-1575818184258-1ceb64f40ff8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDd8fHxlbnwwfHx8fHw%3D"
+                            alt="">
+                    </div>
+                    <div class="lcs">
+                        <div class="l">
+                            <i class="ri-heart-fill text-red-600"></i>
+                            <i class="ri-chat-3-line"></i>
+                            <i class="ri-send-plane-fill"></i>
+                        </div>
+                        <div class="r">
+                            <i class="ri-bookmark-line"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="label">
+                <p class="a text-white">For more information visit our instagram account.</p>
+                <button id="kuchbhi2" class="px-6 py-1 bg-purple-500 text-lg font-semibold z-30 rounded-md mt-[20px]">Visit</button>
+            </div>
+        </div>
+        <div class="over hidden">
+            <div class="overlay ">
+                <div class="section">
+                    <div id="left">
+                       <div class="back">
+                        <button class="backbutton"><i class="ri-arrow-left-line"></i></button>
+                       </div>
+                        <h3>zara</h3>
+                        <buttonn class="tickmark"><i class="ri-check-fill text-xs text-white"></i></button>
+                    </div>
+                    <div id="right"><i class="ri-more-2-fill text-xl"></i></div>
+                </div>
+                <div class="section1">
+                    <div id="pro">
+                        <div id="pro1">
+                            <div id="zara"></div>
+                        </div>
+                        <div id="pro2">
+                            <div class="h2s">
+                                <h2>4,650</h2>
+                                <h2 class="text-sm text-zinc-400">posts</h2>
+                            </div>
+                            <div class="h2s">
+                                <h2>61.8M</h2>
+                                <h2 class="text-sm text-zinc-400">followers</h2>
+                            </div>
+                            <div class="h2s">
+                                <h2>143</h2>
+                                <h2 class="text-sm text-zinc-400">following</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="pros">
+                        <h1 class="text-lg font-semibold mt-[5px]">ZARA</h1>
+                        <button class="px-1 py-1 bg-zinc-700 rounded-xl text-sm font-medium">@ zara</button>
+                        <h1 class="text-sm font-medium">For Man collection check <span class="text-blue-600">@zaraman</span></h1>
+                        <h1 class="text-sm font-medium">Kids collection <span class="text-blue-600">@zarakids</span></h1>
+                        <h1 class="text-sm font-medium">Discover woman collection ⬇</h1>
+                        <h1 class="text-sm font-medium text-blue-600"> go.zara/newin</h1>
+                    </div>
+                </div>
+                <div class="section2">
+                    <button class="px-5 py-1 bg-blue-600 rounded-md text-sm font-semibold">Following</button>
+                    <button class="px-5 py-1 bg-zinc-700 rounded-md text-sm font-semibold">Message</button>
+                    <button class="px-3 py-1 bg-zinc-700 rounded-md text-sm font-semibold">Shop</button>
+                    <button class="px-2 py-1 bg-zinc-700 rounded-md text-sm font-semibold"><i class="ri-arrow-down-s-line"></i></button>
+                </div>
+                <div class="section3">
+                    <div class="one">
+                        <div id="img">
+                        </div>
+                        <h1 class="text-sm font-medium">New In</h1>
+                    </div>
+                    <div class="one">
+                        <div id="img1">
+                        </div>
+                        <h1 class="text-sm font-medium">ZaraHair</h1>
+                    </div>
+                    <div class="one">
+                        <div id="img2">
+                        </div>
+                        <h1 class="text-sm font-medium">Lingerie</h1>
+                    </div>
+                    <div class="one">
+                        <div id="img3">
+                        </div>
+                        <h1 class="text-sm font-medium">Beauty</h1>
+                    </div>
+                </div>
+                <div class="section4">
+                    <div id="logos">
+                        <i id="a" class="ri-grid-fill text-3xl"></i>
+                        <i id="b" class="ri-play-circle-fill text-3xl"></i>
+                        <i id="c" class="ri-account-pin-box-line text-3xl"></i>
+                    </div>
+                </div>
+                <div class="section5">
+                    <div class="tripic">
+                        <div class="a">
+                            <img src="https://images.unsplash.com/photo-1549570652-97324981a6fd?q=80&w=1370&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                        </div>
+                        <div class="a">
+                            <img src="https://media.istockphoto.com/id/1339119863/photo/the-girl-with-tied-hair-in-a-loose-shirt-sits-in-a-white-studio.webp?s=170667a&w=0&k=20&c=UEAwtrGPDPk_5rfhUve2G7YYHaHlDIt3yRCuYBtZnUY=" alt="">
+                        </div>
+                        <div class="a">
+                            <img src="https://images.unsplash.com/photo-1550614000-4895a10e1bfd?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDExfHx8ZW58MHx8fHx8" alt="">
+                        </div>
+                    </div>
+                    <div class="tripic">
+                        <div class="a">
+                            <img src="https://images.unsplash.com/photo-1550639524-39ef65e52515?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEyfHx8ZW58MHx8fHx8" alt="">
+                        </div>
+                        <div class="a">
+                            <img src="https://images.unsplash.com/photo-1568252542512-9fe8fe9c87bb?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGZhc2hpb24lMjBtb2RlbHxlbnwwfHwwfHx8MA%3D%3D" alt="">
+                        </div>
+                        <div class="a">
+                            <img src="https://images.unsplash.com/photo-1561052728-8ebd57d62b66?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzB8fGZhc2hpb24lMjBtb2RlbHxlbnwwfHwwfHx8MA%3D%3D" alt="">
+                        </div>
+                    </div>
+                    <div class="tripic">
+                        <div class="a">
+                            <img src="https://images.unsplash.com/photo-1568252748074-f9c8d964e834?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzR8fGZhc2hpb24lMjBtb2RlbHxlbnwwfHwwfHx8MA%3D%3D" alt="">
+                        </div>
+                        <div class="a">
+                            <img src="https://images.unsplash.com/photo-1568253130222-5fc7d0173808?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDV8fHxlbnwwfHx8fHw%3D" alt="">
+                        </div>
+                        <div class="a">
+                            <img src="https://images.unsplash.com/photo-1550928323-31789f5b5d61?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDExfHx8ZW58MHx8fHx8" alt="">
+                        </div>
+                    </div>
+                    <div class="tripic">
+                        <div class="a">
+                            <img src="https://images.unsplash.com/photo-1488161628813-04466f872be2?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZmFzaGlvbiUyMG1hbGUlMjBtb2RlbHxlbnwwfHwwfHx8MA%3D%3D" alt="">
+                        </div>
+                        <div class="a">
+                            <img src="https://media.istockphoto.com/id/1165908190/photo/calm-young-man-sitting-on-the-bridge-with-cigarette.webp?s=170667a&w=0&k=20&c=ZM8pPIrSsGK9fk7niqMtpL2mzoPxh1YUbmw7MBHN-YY=" alt="">
+                        </div>
+                        <div class="a">
+                            <img src="https://media.istockphoto.com/id/1148695899/photo/portrait-of-an-attractive-modern-young-man.webp?s=170667a&w=0&k=20&c=_UFGThPorOSn-iTgRbrS7KYbeJtuVjhit9DcUZaHLvw=" alt="">
+                        </div>
+                    </div>
+                    <div class="tripic">
+                        <div class="a">
+                            <img src="https://images.unsplash.com/photo-1519764622345-23439dd774f7?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE1fHx8ZW58MHx8fHx8" alt="">
+                        </div>
+                        <div class="a">
+                            <img src="https://images.unsplash.com/photo-1565679871226-33cfa91bedae?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE3fHx8ZW58MHx8fHx8" alt="">
+                        </div>
+                        <div class="a">
+                            <img src="https://images.unsplash.com/photo-1535530705774-695729778c55?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGZhc2hpb24lMjBtYWxlJTIwbW9kZWx8ZW58MHx8MHx8fDA%3D" alt="">
+                        </div>
+                    </div>
+                    <div class="tripic">
+                        <div class="a">
+                            <img src="https://images.unsplash.com/photo-1484186304838-0bf1a8cff81c?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGZhc2hpb24lMjBtYWxlJTIwbW9kZWx8ZW58MHx8MHx8fDA%3D" alt="">
+                        </div>
+                        <div class="a">
+                            <img src="https://images.unsplash.com/photo-1484186304838-0bf1a8cff81c?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGZhc2hpb24lMjBtYWxlJTIwbW9kZWx8ZW58MHx8MHx8fDA%3D" alt="">
+                        </div>
+                        <div class="a">
+                            <img src="https://images.unsplash.com/photo-1484186304838-0bf1a8cff81c?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGZhc2hpb24lMjBtYWxlJTIwbW9kZWx8ZW58MHx8MHx8fDA%3D" alt="">
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>
