@@ -58,7 +58,7 @@ font-family: "chiller";
     background: rgb(255, 255, 255);
     border-radius: 100px;
     position: fixed;
-    transition: all ease  0.1s;
+    transition: all linear  0.0s;
     z-index: 20;
 }
 .brand img{
@@ -1071,7 +1071,7 @@ to{
 }
 #div #h1s{
     margin-top: 10px;
-    font-size: 70px;
+    font-size: 60px;
     color: white;
     font-weight: 100;
     font-family: 'Brush Script MT';
